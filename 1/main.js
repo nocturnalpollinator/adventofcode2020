@@ -3,9 +3,9 @@ fs.readFile('input.txt', 'utf8', function(error, data) {
     if (error) return console.log(error)
     
     var numbers = data.split('\n')
-                       .map(n => parseInt(n))
-                       .filter(n => !isNaN(n))
-                       .sort((a, b) => a - b)
+                      .map(n => parseInt(n))
+                      .filter(n => !isNaN(n))
+                      .sort((a, b) => a - b) 
 
     // Part I
     var part1 = numbers.filter(n => numbers.indexOf(2020 - n) > 0)
