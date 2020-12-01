@@ -15,8 +15,7 @@ fs.readFile('input.txt', 'utf8', function(error, data) {
     // Part II
     var part2 = 0;
     numbers.filter(n => {
-            rest = 2020 - n
-            foo = numbers.filter(n => numbers.indexOf(rest - n) > 0)
+            foo = numbers.filter(m => numbers.indexOf(2020 - n - m) > 0)
             if (foo.length == 2) {
                 part2 = n * foo.reduce((a, b) => a * b)
             }
