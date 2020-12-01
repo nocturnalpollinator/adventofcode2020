@@ -10,15 +10,13 @@ fs.readFile('input.txt', 'utf8', function(error, data) {
     // Part I
     var part1 = numbers.filter(n => numbers.indexOf(2020 - n) > 0)
                        .reduce((a, b) => a * b)
-    console.log('Part I: ' + part1)
 
     // Part II
-    var part2 = 0;
-    numbers.filter(n => {
-            foo = numbers.filter(m => numbers.indexOf(2020 - n - m) > 0)
-            if (foo.length == 2) {
-                part2 = n * foo.reduce((a, b) => a * b)
-            }
-        })
+    var part2 = numbers.filter(n => {
+                            foo = numbers.filter(m => numbers.indexOf(2020 - n - m) > 0)
+                            return foo.length == 2 ? foo.push(n) : null
+                        }).reduce((a, b) => a * b)
+
+    console.log('Part I: ' + part1)
     console.log('Part II: ' + part2)
 })
