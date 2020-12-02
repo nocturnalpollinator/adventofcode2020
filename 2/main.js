@@ -19,8 +19,6 @@ lineReader.on('close', () => {
     )
 
     console.log('Part II: ' +
-        setup.filter(item => {
-            return (item[3].charAt(item[0] - 1) == item[2] && item[3].charAt(item[1] - 1) != item[2]) ||  (item[3].charAt(item[0] - 1) != item[2] && item[3].charAt(item[1] - 1) == item[2])
-        }).length
+        setup.filter(item => (item[3].charAt(item[0] - 1) == item[2] && item[3].charAt(item[1] - 1) != item[2]) || (item[3].charAt(item[0] - 1) != item[2] && item[3].charAt(item[1] - 1) == item[2])).length
     )
 })
