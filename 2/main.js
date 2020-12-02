@@ -8,9 +8,7 @@ lineReader.on('line', line => {
                  .replace('-', ' ')
                  .split(' ')
                  .map(item => isNaN(item) ? item : parseInt(item)))
-})
-
-lineReader.on('close', () => {
+}).on('close', () => {
     console.log('Part I: ' +
         setup.filter(item => {
             match = item[3].match((new RegExp(item[2], 'g')) || [])
