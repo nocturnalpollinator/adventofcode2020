@@ -5,9 +5,9 @@ var lineReader = require('readline').createInterface({
 var setup = []
 lineReader.on('line', line => {
     setup.push(line.replace(':', '')
-                 .replace('-', ' ')
-                 .split(' ')
-                 .map(item => isNaN(item) ? item : parseInt(item)))
+                   .replace('-', ' ')
+                   .split(' ')
+                   .map(item => isNaN(item) ? item : parseInt(item)))
 }).on('close', () => {
     console.log('Part I: ' +
         setup.filter(item => {
