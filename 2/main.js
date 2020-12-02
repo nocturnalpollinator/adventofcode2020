@@ -11,7 +11,7 @@ lineReader.on('line', line => {
 }).on('close', () => {
     console.log('Part I: ' +
         setup.filter(item => {
-            match = item[3].match((new RegExp(item[2], 'g')) || [])
+            match = item[3].match((new RegExp(item[2], 'g')))
             return match !== null && match.length >= item[0] && match.length <= item[1]
         }).length
     )
