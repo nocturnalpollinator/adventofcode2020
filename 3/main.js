@@ -7,12 +7,13 @@ oddLine = true
 count = [0,0,0,0,0]
 
 lineReader.on('line', line => {
+    len = line.length
     count = [
-        count[0] + (line.charAt(Math.ceil(x1/2) % line.length) == '#' && oddLine),
-        count[1] + (line.charAt((x1++) % line.length) == '#'),
-        count[2] + (line.charAt(((x2 += 3) - 3) % line.length) == '#'),
-        count[3] + (line.charAt(((x3 += 5) - 5) % line.length) == '#'),
-        count[4] + (line.charAt(((x4 += 7) - 7) % line.length) == '#')
+        count[0] + (line.charAt(Math.ceil(x1/2) % len) == '#' && oddLine),
+        count[1] + (line.charAt((x1++) % len) == '#'),
+        count[2] + (line.charAt(((x2 += 3) - 3) % len) == '#'),
+        count[3] + (line.charAt(((x3 += 5) - 5) % len) == '#'),
+        count[4] + (line.charAt(((x4 += 7) - 7) % len) == '#')
     ]
     oddLine = !oddLine
 }).on('close', () => {
