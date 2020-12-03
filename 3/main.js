@@ -8,11 +8,11 @@ count = [0,0,0,0,0]
 
 lineReader.on('line', line => {
     count = [
-        count[0] + (line.charAt(Math.ceil(x1/2) % 31) == '#' && oddLine),
-        count[1] + (line.charAt((x1++) % 31) == '#'),
-        count[2] + (line.charAt(((x2 += 3) - 3) % 31) == '#'),
-        count[3] + (line.charAt(((x3 += 5) - 5) % 31) == '#'),
-        count[4] + (line.charAt(((x4 += 7) - 7) % 31) == '#')
+        count[0] + (line.charAt(Math.ceil(x1/2) % line.length) == '#' && oddLine),
+        count[1] + (line.charAt((x1++) % line.length) == '#'),
+        count[2] + (line.charAt(((x2 += 3) - 3) % line.length) == '#'),
+        count[3] + (line.charAt(((x3 += 5) - 5) % line.length) == '#'),
+        count[4] + (line.charAt(((x4 += 7) - 7) % line.length) == '#')
     ]
     oddLine = !oddLine
 }).on('close', () => {
