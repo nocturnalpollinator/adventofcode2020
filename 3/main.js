@@ -16,6 +16,6 @@ lineReader.on('line', line => {
     ]
     oddLine = !oddLine
 }).on('close', () => {
-    console.log('Part I: ' + count[2]);
+    console.log('Part I: ' + count[2])
     console.log('Part II: ' + count.reduce((a, b) => a * b))
 })
