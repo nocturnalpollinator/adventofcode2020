@@ -15,9 +15,9 @@ function validDetail(i, x) {
         case 'eyr': return !isNaN(x) && x.length == 4 && x >= 2020 && x <= 2030
         case 'hcl': return x.length == 7 && x.match(/\#[a-fA-F0-9]{6}/g) != ''
         case 'hgt': return (x.substr(x.length - 2, x.length) == 'in' && x.match(/\d/g).join('') >= 59 && x.match(/\d/g).join('') <= 76) ||
-                            (x.substr(x.length - 2, x.length) == 'cm' && x.match(/\d/g).join('') >= 150 && x.match(/\d/g).join('') <= 193)
-        case 'iyr': return  !isNaN(x) && x.length == 4 && x >= 2010 && x <= 2020
-        case 'pid': return  !isNaN(x) && x.length == 9
+                           (x.substr(x.length - 2, x.length) == 'cm' && x.match(/\d/g).join('') >= 150 && x.match(/\d/g).join('') <= 193)
+        case 'iyr': return !isNaN(x) && x.length == 4 && x >= 2010 && x <= 2020
+        case 'pid': return !isNaN(x) && x.length == 9
     }
 }
 
@@ -27,11 +27,11 @@ function bufferValid(buffer) {
 
 function bufferExtraValid(buffer) {
     return buffer.split(' ')
-                .map(item => {
-                    s = item.split(':')
-                    return validDetail(s[0], s[1])
-                })
-                .filter(item => item).length == 7
+                  .map(item => {
+                      s = item.split(':')
+                      return validDetail(s[0], s[1])
+                  })
+                  .filter(item => item).length == 7
 }
 
 lineReader.on('line', line => {
