@@ -21,10 +21,7 @@ lineReader.on('line', line => {
     ids.push(id)
 }).on('close', () => {
     console.log('Part I: ' + highest)
-    ids.sort((a, b) => a - b)
-        .map(item => {
-            if (ids.indexOf(item+1) == -1 && ids.indexOf(item+2) != -1) {
-                console.log('Part II: ' + item)
-            }
-        })
+    console.log('Part II: ' + (ids.filter(item => (ids.indexOf(item+1) == -1 && ids.indexOf(item+2) != -1)).pop() + 1))
+                // console.log('Part II: ' + item)
+        // })
 })
