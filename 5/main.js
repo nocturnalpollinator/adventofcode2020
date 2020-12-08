@@ -4,7 +4,7 @@ var lineReader = require('readline').createInterface({
 
 function traverse(min, max, f) {
     x = f.shift()
-    return !f.length ? 'FL'.includes(x) ? min : max : ('FL'.includes(x) ? traverse(min, Math.floor(max - ((max - min) / 2)), f) : traverse(Math.ceil(max - ((max - min) / 2)), max, f))
+    return !f.length ? ('FL'.includes(x) ? min : max) : ('FL'.includes(x) ? traverse(min, Math.floor(max - ((max - min) / 2)), f) : traverse(Math.ceil(max - ((max - min) / 2)), max, f))
 }
 
 ids = []
