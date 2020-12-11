@@ -21,5 +21,5 @@ const nextGeneration = (board, fw = false) => {
     return JSON.stringify(nextGen) !== JSON.stringify(board) ? nextGeneration(nextGen, fw) : board
 }
 
-console.log(nextGeneration(board).map(item => item.filter(item => item == '#').join('')).join('').length)
-console.log(nextGeneration(board, true).map(item => item.filter(item => item == '#').join('')).join('').length)
+console.log('Part I: ' + nextGeneration(board).map(item => item.filter(item => item == '#').join('')).join('').length)
+console.log('Part II: ' + nextGeneration(board, true).map(item => item.filter(item => item == '#').join('')).join('').length)
